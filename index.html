@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Hakem Bank</title>
+    <style>
+        /* CSS: Styling the UI */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        .brand-name {
+            color: #1a4a7c;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a4a7c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #13365a;
+        }
+
+        #status-msg {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="brand-name">HAKEM BANK</div>
+        <form id="hakemLoginForm">
+            <div class="form-group">
+                <label for="username">User ID</label>
+                <input type="text" id="username" placeholder="Enter your ID" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit">Secure Login</button>
+        </form>
+        <p id="status-msg"></p>
+    </div>
+
+    <script>
+        // JavaScript: Handling the button click
+        document.getElementById('hakemLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the page from reloading
+            
+            const user = document.getElementById('username').value;
+            const msg = document.getElementById('status-msg');
+
+            // Simple front-end feedback
+            msg.style.color = "#1a4a7c";
+            msg.innerText = `Connecting to Hakem Bank servers for ${user}...`;
+            
+            console.log("Login sequence initiated for practice purposes.");
+        });
+    </script>
+
+</body>
+</html>
